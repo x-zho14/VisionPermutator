@@ -361,7 +361,7 @@ def main():
             model = model.to(memory_format=torch.channels_last)
 
     optimizer = create_optimizer(args, model)
-
+    print("opt", optimizer)
     amp_autocast = suppress  # do nothing
     loss_scaler = None
     if use_amp == 'apex':
