@@ -356,7 +356,7 @@ def main():
         model = nn.DataParallel(model, device_ids=list(range(args.num_gpu))).cuda()
         assert not args.channels_last, "Channels last not supported with DP, use DDP."
     else:
-        model.cuda()
+        # model.cuda()
         if args.channels_last:
             model = model.to(memory_format=torch.channels_last)
 
